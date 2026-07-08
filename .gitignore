@@ -1,0 +1,24 @@
+# Node
+node_modules/
+dist/
+frontend/node_modules/
+frontend/dist/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Env
+.env
+.env.*
+
+# OS/Editors
+.DS_Store
+.vscode/
+.idea/
+
+# Runtime data
+backend/app/data/*.json
+!backend/app/data/.gitkeep
