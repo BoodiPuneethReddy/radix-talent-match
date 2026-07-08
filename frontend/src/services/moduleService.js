@@ -1,5 +1,6 @@
 import apiClient from './apiClient'
 
 export const moduleService = {
-  getModuleStatus: (modulePath) => apiClient.get(modulePath)
+  getTalentCheckStatus: () => apiClient.get('/api/talent-check/status'),
+  getSkillMatchingStatus: () => apiClient.get('/api/skill-matching/status')
 }
