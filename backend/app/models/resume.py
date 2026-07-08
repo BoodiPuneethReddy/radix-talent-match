@@ -1,13 +1,12 @@
 from __future__ import annotations
 
-from pydantic import BaseModel, EmailStr, Field
+from pydantic import BaseModel, Field
 
 
-class ProfileModel(BaseModel):
+class ParsedCandidateModel(BaseModel):
     name: str = ""
-    email: EmailStr | str = ""
+    email: str = ""
     phone: str = ""
-    location: str = ""
     education: list[str] = Field(default_factory=list)
     projects: list[str] = Field(default_factory=list)
     experience: list[str] = Field(default_factory=list)
@@ -17,15 +16,7 @@ class ProfileModel(BaseModel):
     achievements: list[str] = Field(default_factory=list)
     certifications: list[str] = Field(default_factory=list)
     languages: list[str] = Field(default_factory=list)
-    preferredRoles: list[str] = Field(default_factory=list)
     github: str = ""
     linkedin: str = ""
     portfolio: str = ""
-    profilePhotoName: str = ""
-    profilePhotoPath: str = ""
-    resumeFileName: str = ""
-    resumeFilePath: str = ""
-
-
-class ProfilePatchModel(BaseModel):
-    profile: ProfileModel
+    source: dict[str, str] = Field(default_factory=dict)
